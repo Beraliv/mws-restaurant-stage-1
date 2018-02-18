@@ -43,4 +43,29 @@
     width: 1140px;
     margin: 0 auto;
   }
+
+  .inside .map,
+  .inside .restaurant {
+    margin: 15px 30px;
+  }
+
+  .inside .map,
+  .inside #map {
+    height: 640px;
+  }
+
+  .inside .map {
+    width: 45%;
+    margin-top: 170px;
+  }
+
+  .inside .restaurant {
+    border: none;
+    width: 35%;
+    margin-top: 125px;
+  }
+
+  .inside .reviews {
+    border: none;
+  }
 }
