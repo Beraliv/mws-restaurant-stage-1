@@ -1,5 +1,14 @@
 {
+  "editor.tabSize": 2,
+  "editor.autoIndent": true,
+
   "stylelint.enable": true,
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.options": { 
+    "configFile": ".eslintrc"
+  }
 }
