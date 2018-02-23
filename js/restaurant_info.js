@@ -110,7 +110,7 @@ function fillRestaurantHoursHTML(operatingHours = self.restaurant.operating_hour
  */
 function fillReviewsHTML(reviews = self.restaurant.reviews) {
   const container = document.getElementsByClassName('reviews')[0];
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
@@ -163,10 +163,11 @@ function createReviewHTML(review) {
  * @returns {void}
  */
 function fillBreadcrumb(restaurant = self.restaurant) {
-  const breadcrumb = document.getElementById('breadcrumb');
+  const breadcrumb = document.getElementsByClassName('breadcrumb')[0];
+  const ol = breadcrumb.getElementsByTagName('ol')[0];
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
-  breadcrumb.appendChild(li);
+  ol.appendChild(li);
 };
 
 /**

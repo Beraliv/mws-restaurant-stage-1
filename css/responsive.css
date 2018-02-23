@@ -29,7 +29,13 @@
   height: 100px;
 }
 
-@media screen and (min-width: 0) and (max-width: 460px) {
+@media screen and (min-width: 397px) {
+  nav.header h1 a {
+    line-height: 69px;
+  }
+}
+
+@media screen and (max-width: 460px) {
   .filter {
     height: 160px;
   }
