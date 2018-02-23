@@ -21,7 +21,7 @@
 }
 
 .filter__title {
-  width: 100%;
+  max-width: 100%;
   padding: 10px 0;
 }
 
@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 774px) {
   .restaurants-list li {
-    width: 100%;
+    width: calc(100% - 47px);
   }
 }
 
