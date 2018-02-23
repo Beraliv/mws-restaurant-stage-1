@@ -62,6 +62,11 @@ function fillRestaurantHTML(restaurant = self.restaurant) {
 
   const image = document.getElementsByClassName('restaurant__image')[0];
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = [
+    'restaurant',
+    restaurant.name,
+    restaurant.neighborhood
+  ].join(' ').toLowerCase();
 
   const cuisine = document.getElementsByClassName('restaurant__cuisine')[0];
   cuisine.innerHTML = restaurant.cuisine_type;
