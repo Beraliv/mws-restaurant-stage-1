@@ -38,6 +38,26 @@
   }
 }
 
+@media screen and (max-width: 774px) {
+  .restaurants-list li {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 775px) and (max-width: 1138px) {
+  .restaurants-list li {
+    /* 47px = margin: 15px + padding: 30px + border: 2px */
+    width: calc(50% - 94px);
+  }
+}
+
+@media screen and (min-width: 1139px) {
+  .restaurants-list li {
+    /* 47px = margin: 15px + padding: 30px + border: 2px */
+    width: calc(33% - 91px);
+  }
+}
+
 @media screen and (min-width: 1141px) {
   .content {
     width: 1140px;

@@ -56,8 +56,10 @@ nav,
 section {
   display: block;
 }
-.content {
+main {
   background-color: #f3f3f3;
+}
+.content {
   min-height: 100%;
 }
 .footer {
@@ -172,7 +174,6 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
 }
 .restaurants-list li h1 {
