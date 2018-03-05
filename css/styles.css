@@ -211,9 +211,6 @@ nav.breadcrumb li a:hover {
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside .content {
-  margin-top: 130px;
-}
 .restaurant__name {
   color: #f18200;
   font-family: Arial, sans-serif;
