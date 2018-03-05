@@ -92,10 +92,12 @@ function fillRestaurantHoursHTML(operatingHours = self.restaurant.operating_hour
 
       const day = document.createElement('td');
       day.innerHTML = key;
+      day.tabIndex = 0;
       row.appendChild(day);
 
       const time = document.createElement('td');
       time.innerHTML = operatingHours[key];
+      time.tabIndex = 0;
       row.appendChild(time);
 
       hours.appendChild(row);

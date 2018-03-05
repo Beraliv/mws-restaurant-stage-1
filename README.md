@@ -37,11 +37,11 @@ With your server running, visit the site: [http://localhost:8000](http://localho
   - [x] Grid of restaurants is well centered
   - [x] Horizontal scroll (mobile)
   - [ ] All the space is covered with elements (laptop)
-- [ ] Accessibility
+- [x] Accessibility
   - [x] Images has `alt` attribute
   - [x] All headers have appropriate `aria` roles
   - [x] Google Map has `application` or `widget` role
-  - [ ] Table has `tabindex` to enable a user to go it through using Tab
+  - [x] Table has `tabindex` to enable a user to go it through using Tab
 - [x] Offline Availability
 - [x] General improvements
   - [x] JS style is set (using [ESLint](https://eslint.org/) based on [Udacity style guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html))
