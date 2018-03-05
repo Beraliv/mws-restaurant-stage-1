@@ -42,6 +42,7 @@ With your server running, visit the site: [http://localhost:8000](http://localho
   - [x] All headers have appropriate `aria` roles
   - [x] Google Map has `application` or `widget` role
   - [x] Table has `tabindex` to enable a user to go it through using Tab
+  - [x] Breadcrumbs have appropriate `aria` roles, structure and attributes (based on [W3 Breadcrumb Example](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/breadcrumb/index.html))
 - [x] Offline Availability
 - [x] General improvements
   - [x] JS style is set (using [ESLint](https://eslint.org/) based on [Udacity style guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html))
