@@ -32,11 +32,11 @@ With your server running, visit the site: [http://localhost:8000](http://localho
 
 ### Issues
 
-- [ ] Responsive Design
+- [x] Responsive Design
   - [x] Two white columns are replaced with background colour (laptop)
   - [x] Grid of restaurants is well centered
   - [x] Horizontal scroll (mobile)
-  - [ ] All the space is covered with elements (laptop)
+  - [x] All the space is covered with elements (laptop)
 - [x] Accessibility
   - [x] Images has `alt` attribute
   - [x] All headers have appropriate `aria` roles
