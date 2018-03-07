@@ -217,7 +217,7 @@ nav.breadcrumb li a:hover {
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
-  margin: 15px 0 30px;
+  margin: 0 0 30px;
   text-transform: uppercase;
   line-height: 1.1;
 }
@@ -242,9 +242,6 @@ nav.breadcrumb li a:hover {
 }
 .restaurant,
 .reviews {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 30px 40px;
   width: 50%;
 }
 .reviews {
@@ -268,7 +265,7 @@ nav.breadcrumb li a:hover {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 20px;
   position: relative;
   max-width: 96%;
 }
