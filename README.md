@@ -43,7 +43,9 @@ With your server running, visit the site: [http://localhost:8000](http://localho
   - [x] Google Map has `application` or `widget` role
   - [x] Table has `tabindex` to enable a user to go it through using Tab
   - [x] Breadcrumbs have appropriate `aria` roles, structure and attributes (based on [W3 Breadcrumb Example](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/breadcrumb/index.html))
-- [x] Offline Availability
+- [ ] Offline Availability
+  - [ ] Service worker is registered
+  - [ ] Service worker implements offline caching (in case of network failure)
 - [x] General improvements
   - [x] JS style is set (using [ESLint](https://eslint.org/) based on [Udacity style guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html))
   - [x] CSS style is set (using [Style lint](https://stylelint.io/) based on [Udacity style guide](http://udacity.github.io/frontend-nanodegree-styleguide/css.html))
