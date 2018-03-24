@@ -19,13 +19,13 @@ If you don't have Python installed, navigate to Python's [website](https://www.p
 If you have Python 2.x, spin up the server with:
 
 ```bash
-python -m SimpleHTTPServer 8000
+python run2.py
 ```
 
 For Python 3.x, you can use:
 
 ```
-python3 -m http.server 8000
+python3 run3.py
 ```
 
 With your server running, visit the site: [http://localhost:8000](http://localhost:8000).
