@@ -43,6 +43,8 @@ With your server running, visit the site: [http://localhost:8000](http://localho
   - [x] Google Map has `application` or `widget` role
   - [x] Table has `tabindex` to enable a user to go it through using Tab
   - [x] Breadcrumbs have appropriate `aria` roles, structure and attributes (based on [W3 Breadcrumb Example](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/breadcrumb/index.html))
+  - [x] Language is set to `html` as attribute `lang="en"`
+  - [x] Main has a `main` role
 - [ ] Offline Availability
   - [ ] Service worker is registered
   - [ ] Service worker implements offline caching (in case of network failure)
