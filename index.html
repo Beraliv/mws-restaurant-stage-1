@@ -30,11 +30,21 @@
       </section>
 
       <section class="filter">
-        <h2 class="filter__title">Filter Results</h2>
-        <select name="neighbours" class="filter__select-neighbours" onchange="updateRestaurants()">
+        <h2 class="filter__title" id="filter">Filter Results</h2>
+        <select
+          name="neighbours"
+          class="filter__select-neighbours"
+          onchange="updateRestaurants()"
+          aria-labelledby="filter"
+        >
           <option value="all">All Neighbours</option>
         </select>
-        <select name="cuisines" class="filter__select-cuisines" onchange="updateRestaurants()">
+        <select
+          name="cuisines"
+          class="filter__select-cuisines"
+          onchange="updateRestaurants()"
+          aria-labelledby="filter"
+        >
             <option value="all">All Cuisines</option>
           </select>
       </section>

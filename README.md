@@ -57,12 +57,12 @@ With your server running, visit the site: [http://localhost:8000](http://localho
 
 #### Stage 2 (using Lighthouse report)
 
-- [x] Performance
-  - [x] `> 70` (already `85` after Stage 1)
+- [ ] Performance
+  - [ ] `> 70` (already `85` after Stage 1, decreased to `66`)
 - [x] Progressive Web Application
   - [x] `> 90` (increased from `73` to `92`)
-- [ ] Accessibility
-  - [ ] `> 90`
+- [x] Accessibility
+  - [x] `> 90` (increased from `81` to `95`)
 
 ### Image
 
