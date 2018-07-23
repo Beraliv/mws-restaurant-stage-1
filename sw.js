@@ -8,6 +8,10 @@ const allCaches = [
 const filesToCache = [
   // icon
   'img/icon.ico',
+  'img/icon-128.png',
+  'img/icon-144.png',
+  'img/icon-256.png',
+  'img/icon-512.png',
   // json
   'data/restaurants.json',
   // html

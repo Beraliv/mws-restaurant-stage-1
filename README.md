@@ -32,6 +32,8 @@ With your server running, visit the site: [http://localhost:8000](http://localho
 
 ### Issues
 
+#### Stage 1
+
 - [x] Responsive Design
   - [x] Two white columns are replaced with background colour (laptop)
   - [x] Grid of restaurants is well centered
@@ -53,6 +55,15 @@ With your server running, visit the site: [http://localhost:8000](http://localho
   - [x] CSS style is set (using [Style lint](https://stylelint.io/) based on [Udacity style guide](http://udacity.github.io/frontend-nanodegree-styleguide/css.html))
   - [x] Structure README (using [Udacity: Writing READMEs](https://classroom.udacity.com/courses/ud777))
 
-### License
+#### Stage 2 (using Lighthouse report)
 
-<div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+- [x] Performance
+  - [x] `> 70` (already `85` after Stage 1)
+- [x] Progressive Web Application
+  - [x] `> 90` (increased from `73` to `92`)
+- [ ] Accessibility
+  - [ ] `> 90`
+
+### Image
+
+<div>PNG picture is extracted from <a href="https://the-avocado.org/" title="The Avocado">The Avocado</a>
