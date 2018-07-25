@@ -109,11 +109,11 @@ nav.breadcrumb li + li:before {
   content: "/\00a0";
 }
 nav.breadcrumb li a {
-  color: #0275d8;
+  color: #024F97;
   text-decoration: none;
 }
 nav.breadcrumb li a:hover {
-  color: #01447e;
+  color: #022B55;
   text-decoration: underline;
 }
 /* Override for Restaurant Details page */
@@ -251,7 +251,7 @@ nav.breadcrumb li a:hover {
   padding: 30px 40px;
 }
 .reviews h3 {
-  color: #f58500;
+  color: #8A4600;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;

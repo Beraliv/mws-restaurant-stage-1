@@ -57,12 +57,18 @@ With your server running, visit the site: [http://localhost:8000](http://localho
 
 #### Stage 2 (using Lighthouse report)
 
-- [ ] Performance
-  - [ ] `> 70` (already `85` after Stage 1, decreased to `66`)
+- [x] Performance
+  - [x] `> 70` (increased to average `93`)
 - [x] Progressive Web Application
   - [x] `> 90` (increased from `73` to `92`)
 - [x] Accessibility
   - [x] `> 90` (increased from `81` to `95`)
+
+### Reports
+
+![Home page](https://github.com/Beraliv/mws-restaurant-stage-1/blob/master/report/home-page-report.png)
+
+![Restaurant page](https://github.com/Beraliv/mws-restaurant-stage-1/blob/master/report/restaurant-page-report.png)
 
 ### Image
 
