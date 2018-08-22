@@ -66,10 +66,10 @@ With your server running, visit the site: [http://localhost:8000](http://localho
 
 #### Stage 3 (using Lighthouse report)
 
-- [ ] A form to allow users to create their own reviews
+- [x] A form to allow users to create their own reviews
 - [ ] A functionality to defer updates until the user is connected
 - [ ] Performance
-  - [ ] `> 90` (decreased from previous stage: `74`)
+  - [ ] `> 90` (decreased to `72` and `74` for home and restaurant pages)
 - [x] Progressive Web Application
   - [x] `> 90` (from previous stage: `92`)
 - [x] Accessibility

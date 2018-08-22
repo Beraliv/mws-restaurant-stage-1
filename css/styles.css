@@ -276,6 +276,11 @@ nav.breadcrumb li a:hover {
   position: relative;
   max-width: 96%;
 }
+.reviews-list li form input,
+.reviews-list li form select,
+.reviews-list li form textarea {
+  display: block;
+}
 .reviews-list li p {
   margin: 0 0 10px;
 }

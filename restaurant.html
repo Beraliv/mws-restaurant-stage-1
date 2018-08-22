@@ -11,7 +11,7 @@
 
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="img/icon.ico">
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
+  <link rel="preload" as="style" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -47,7 +47,43 @@
       </section>
       
       <section class="reviews">
-        <ul class="reviews-list"></ul>
+        <ul class="reviews-list">
+          <li>
+            <form
+              id="add-review-form"
+              role="form"
+              aria-labelledby="add-review"
+              action="http://localhost:1337/reviews/"
+              method="POST"
+            >
+              <fieldset>
+                <legend id="add-review">Add a review</legend>
+
+                <label id="username">Username: </label>
+                <input type="text" aria-labelledby="username" name="name">
+
+                <label id="restaurant_id">Restaurant ID: </label>
+                <input type="text" aria-labelledby="restaurant_id" name="restaurant_id">
+
+                <label for="rating">Rating: </label>
+                <select id="rating" name="rating" form="add-review-form">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+
+                <label id="comments">Comments: </label>
+                <textarea aria-labelledby="comments" name="comments"></textarea>
+
+                <br>
+              
+                <button type="submit">Submit</button>
+              </fieldset>
+            </form>
+          </li>
+        </ul>
       </section>
     </section>
 
@@ -59,7 +95,7 @@
   <script src="sw.js"></script>
   <script async defer src="js/dbhelper.js"></script>
   <script async defer src="js/restaurant_info.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gktUOfVzbPgrefRc8Hbnz3XTFzfm7qU&libraries=places&callback=initMap"></script>
 </body>
 
 </html>
