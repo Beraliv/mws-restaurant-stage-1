@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+@font-face {
+  font-display: auto;
+}
+
 /* CSS Document */
 body,
 td,

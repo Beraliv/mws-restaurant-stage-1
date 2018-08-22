@@ -8,7 +8,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 1337; // Change this to your server port
-    return `http://localhost:${port}/restaurants`;
+    return `http://localhost:${port}`;
   }
 
   /**
@@ -17,10 +17,12 @@ class DBHelper {
    * @returns {void}
    */
   static fetchRestaurants(callback) {
-    fetch(DBHelper.DATABASE_URL)
+    const url = '/restaurants';
+
+    fetch(`${DBHelper.DATABASE_URL}${url}`)
       .then(response => response.json())
       .then(restaurants => { callback(null, restaurants) })
-      .catch(() => { callback('Request failed (GET /restaurants)', null) })
+      .catch(() => { callback(`Request failed (GET ${url})`, null) });
   }
 
   /**
@@ -30,10 +32,21 @@ class DBHelper {
    * @returns {void}
    */
   static fetchRestaurantById(id, callback) {
-    fetch(`${DBHelper.DATABASE_URL}/${id}`)
+    const url = `/restaurants/${id}`;
+
+    fetch(`${DBHelper.DATABASE_URL}${url}`)
       .then(response => response.json())
       .then(restaurant => { callback(null, restaurant) })
-      .catch(() => { callback(`Request failed (GET /restaurants/${id})`, null) })
+      .catch(() => { callback(`Request failed (GET ${url})`, null) });
+  }
+
+  static fetchReviewsByRestaurantId(restaurantId, callback) {
+    const url = `/reviews/?restaurant_id=${restaurantId}`;
+
+    fetch(`${DBHelper.DATABASE_URL}${url}`)
+      .then(response => response.json())
+      .then(reviews => { callback(null, reviews) })
+      .catch(() => { callback(`Request failed (GET ${url})`, null) });
   }
 
   /**
@@ -169,8 +182,8 @@ class DBHelper {
       title: restaurant.name,
       url: DBHelper.urlForRestaurant(restaurant),
       map: map,
-      animation: google.maps.Animation.DROP}
-    );
+      animation: google.maps.Animation.DROP
+    });
     return marker;
   }
 

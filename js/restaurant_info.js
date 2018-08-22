@@ -33,20 +33,45 @@ function fetchRestaurantFromURL(callback) {
   }
   const id = getParameterByName('id');
   if (!id) { // no id found in URL
-    error = 'No restaurant id in URL';
-    callback(error, null);
+    callback('No restaurant id in URL', null);
   } else {
-    DBHelper.fetchRestaurantById(id, (error, restaurant) => {
+    DBHelper.fetchRestaurantById(id, (restaurantError, restaurant) => {
       self.restaurant = restaurant;
       if (!restaurant) {
-        console.error(error);
+        console.error(restaurantError);
         return;
       }
-      fillRestaurantHTML();
+      fetchReviewsFromURL(id, reviewsError => {
+        if (!reviews) {
+          console.error(reviewsError);
+          return;
+        }
+        fillRestaurantHTML();
+      });
       callback(null, restaurant);
     });
   }
 };
+
+function fetchReviewsFromURL(restaurantId, callback) {
+  if (self.review) {  // reviews already fetched!
+    callback(null, self.reviews);
+    return;
+  }
+  
+  if (!restaurantId) {
+    callback('No restaurant id in URL', null);
+  } else {
+    DBHelper.fetchReviewsByRestaurantId(restaurantId, (error, reviews) => {
+      self.reviews = reviews;
+      if (!reviews) {
+        console.error(error);
+        return;
+      }
+      callback(null, reviews);
+    });
+  }
+}
 
 /**
  * Create restaurant HTML and add it to the webpage
@@ -110,7 +135,7 @@ function fillRestaurantHoursHTML(operatingHours = self.restaurant.operating_hour
  * @param {array} reviews - reviews to the restaurant
  * @returns {void}
  */
-function fillReviewsHTML(reviews = self.restaurant.reviews) {
+function fillReviewsHTML(reviews = self.reviews) {
   const container = document.getElementsByClassName('reviews')[0];
   const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
@@ -133,7 +158,8 @@ function fillReviewsHTML(reviews = self.restaurant.reviews) {
  * Create review HTML and add it to the webpage
  * @param {object} review - created review to the restaurant
  * @param {string} review.name - the name of the review
- * @param {string} review.date - the date of the review
+ * @param {number} review.createdAt - the creation date of the review
+ * @param {number} review.updatedAt - the update date of the review
  * @param {number} review.rating - the rating of the review
  * @param {string} review.comments - the comments of the review
  * @returns {Element} li - the created review
@@ -145,7 +171,7 @@ function createReviewHTML(review) {
   li.appendChild(name);
 
   const date = document.createElement('p');
-  date.innerHTML = review.date;
+  date.innerHTML = new Date(review.updatedAt || review.createdAt).toLocaleString();
   li.appendChild(date);
 
   const rating = document.createElement('p');
