@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Open Sans Regular", "Helvetica", "Arial", sans-serif;
+  src: url("fonts/OpenSans-Regular-BasicLatin.woff2") format("woff2");
+  font-display: optional;
+} 
+
 .content {
   display: flex;
   flex-wrap: wrap;

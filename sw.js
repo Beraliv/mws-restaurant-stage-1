@@ -20,11 +20,26 @@ const filesToCache = [
   'css/styles.css',
   // js
   'js/dbhelper.js',
-  'js/main.js'
+  'js/idb.js',
+  'js/main.js',
+  'js/store.js',
 ];
 
 const isNotInCache = cacheName =>
   cacheName.startsWith(startCacheName) && !allCaches.includes(cacheName);
+
+const saveLocally = ({ name, rating, comments }) => {
+  const root = document.querySelector('ul.reviews-list');
+
+  const review = createReviewHTML({
+    name,
+    createdAt: new Date().getTime(),
+    rating,
+    comments
+  });
+
+  root.appendChild(review);
+}
 
 function registerHook() {
   self.addEventListener('load', () => {
@@ -34,6 +49,56 @@ function registerHook() {
         .then(registration => {
           console.warn('Service worker: Register ✓');
           console.warn(registration.scope);
+
+          if ('sync' in registration) {
+            const form = document.querySelector('#add-review-form');
+
+            if (form !== null) {
+              const username = form.querySelector('input[name=\'name\']');
+              const id = form.querySelector('input[name=\'restaurant_id\']');
+              const rating = form.querySelector('#rating');
+              const comments = form.querySelector('textarea[name=\'comments\']');
+
+              form.addEventListener('submit', event => {
+                event.preventDefault();
+
+                const form = {
+                  name: username.value,
+                  restaurant_id: Number(id.value),
+                  rating: rating.value,
+                  comments: comments.value
+                };
+
+                const clearForm = () => {
+                  username.value = '';
+                  id.value = '';
+                  rating.value = '5';
+                  comments.value = '';
+                }
+
+                const tryLater = () => {
+                  store.outbox('readwrite')
+                    .then(outbox => outbox.put(form))
+                    .then(() => {
+                      clearForm();
+                      return registration.sync.register('outbox');
+                    }).catch(error => {
+                      console.log('IndexedDB: Save comment ✗', error);
+                      form.submit();
+                    });
+                }
+
+                saveLocally(form);
+                if (navigator.onLine) {
+                  clearForm();
+                  postReview(form)
+                    .catch(tryLater);
+                } else {
+                  tryLater();
+                }
+              });
+            }
+          }
         })
         .catch(error => {
           console.warn('Service worker: Register ✗');
@@ -110,12 +175,43 @@ function messageHook() {
   });
 }
 
+function postReview(body) {
+  return fetch('http://localhost:1337/reviews/', {
+    method: 'POST',
+    body: JSON.stringify(body)
+  });
+}
+
+function syncHook() {
+  const uploadReviews = () => {
+    store.outbox('readonly')
+        .then(outbox => outbox.getAll())
+        .then(comments => Promise.all(
+          comments.map(comment => {
+            return postReview(comment)
+              .then(response => response.json())
+              .then(data => {
+                if (data.result === 'success') {
+                  return store.outbox('readwrite')
+                    .then(outbox => outbox.delete(comment.id))
+                }
+                return Promise.resolve()
+              })
+          })
+        ));
+  };
+
+  self.addEventListener('sync', uploadReviews);
+  self.addEventListener('online', uploadReviews);
+}
+
 function app() {
   registerHook();
   installHook();
   activateHook();
   fetchHook();
   messageHook();
+  syncHook();
 }
 
 app();

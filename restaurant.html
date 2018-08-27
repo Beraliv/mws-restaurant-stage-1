@@ -11,7 +11,7 @@
 
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="img/icon.ico">
-  <link rel="preload" as="style" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -53,8 +53,6 @@
               id="add-review-form"
               role="form"
               aria-labelledby="add-review"
-              action="http://localhost:1337/reviews/"
-              method="POST"
             >
               <fieldset>
                 <legend id="add-review">Add a review</legend>
@@ -79,7 +77,7 @@
 
                 <br>
               
-                <button type="submit">Submit</button>
+                <input id="add-review-form-button" type="submit" value="Submit" />
               </fieldset>
             </form>
           </li>
@@ -92,10 +90,12 @@
     </footer>
   </main>
   
-  <script src="sw.js"></script>
+  <script async defer src="js/idb.js"></script>
+  <script async defer src="js/store.js"></script>
+  <script async defer src="sw.js"></script>
   <script async defer src="js/dbhelper.js"></script>
   <script async defer src="js/restaurant_info.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gktUOfVzbPgrefRc8Hbnz3XTFzfm7qU&libraries=places&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkgHfsjfdpAaamtxsilyLtiLmBZAEDfbk&libraries=places&callback=initMap"></script>
 </body>
 
 </html>
